@@ -24,7 +24,8 @@
                         <tbody>
                             @foreach ($products as $product)
                                 <tr>
-                                    <td><img src="{{ url('/image/view/' . $product['image_url']) }}" width="100"></td>
+                                    <td><img src="{{ route('admin.products.image', ['imageName' => $product['image_url']]) }}"
+                                            width="100" /></td>
                                     <td>{{ $product['id'] }}</td>
                                     <td>{{ $product['name'] }}</td>
                                     <td>{{ $product['price'] }}</td>

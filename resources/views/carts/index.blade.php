@@ -55,8 +55,7 @@
                     <td>
                         <a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i>Lanjutkan
                             Belanja</a>
-                        <a href="{{ route('payment', ['total' => $total]) }}" class="btn btn-primary"><i
-                                class="fa fa-angle-left">Lanjut ke pembayaran</i></a>
+                        <a href="{{ route('admin.orders.create') }}" class="btn btn-primary">Lanjut Ke Pembayaran</a>
                     </td>
                     <td colspan="2" class="hidden-xs"></td>
                     <td class="hidden-xs text-center"><strong>Total {{ $total }}</strong></td>

@@ -65,9 +65,14 @@
                     <ul class="navbar-nav ml-auto">
                         {{-- cart --}}
                         <li class="nav-item">
-                            <a href="{{ route('carts.index') }}" class="btn btn-primary btn-block">
+                            {{-- <a href="{{ route('carts.index') }}" class="btn btn-primary btn-block">
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span
                                     class="badge badge-pill badge-danger">{{ count(session('cart')) }}
+                                </span>
+                            </a> --}}
+                            <a href="{{ route('carts.index') }}" class="btn btn-primary btn-block">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span
+                                    class="badge badge-pill badge-danger">{{ count([session('cart')]) }}
                                 </span>
                             </a>
                         </li>
@@ -91,7 +96,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                 document.getElementById('logout-form').submit();">
+                                                                                                                                                                                                                                                                                                                                                                                                                             document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 

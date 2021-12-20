@@ -22,6 +22,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::name('admin.')->group(function () {
     Route::group(['prefix' => 'admin'], function () {
         Route::resource('products', 'Admin\ProductController');
+
+        Route::resource('orders', 'Admin\OrderController');
     });
 });
 
@@ -31,7 +33,6 @@ Route::get('image/view/{fileImage}', 'Admin\ProductController@viewImage')->name(
 Route::get('/products', 'ProductController@index')->name('products.index');
 Route::get('/products/{id}', 'ProductController@show')->name('products.show');
 Route::get('/products/image/{imageName}', 'ProductController@image')->name('products.image');
-
 
 Route::get('/carts', 'CartController@index')->name('carts.index');
 Route::get('/carts/add/{id}', 'CartController@add')->name('carts.add');
