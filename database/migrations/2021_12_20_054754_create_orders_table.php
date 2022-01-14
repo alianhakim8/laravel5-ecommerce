@@ -18,8 +18,15 @@ class CreateOrdersTable extends Migration
             $table->integer('user_id');
             $table->string('status');
             $table->string('total_price');
-            $table->text('shipping_address');
-            $table->integer('zip_code');
+            // $table->text('shipping_address');
+            // $table->integer('zip_code');
+            $table->text('address');
+            $table->text('address_line2');
+            $table->text('district');
+            $table->string('city');
+            $table->string('province');
+            $table->string('zip_code');
+            $table->integer('phone_number');
             $table->timestamps();
         });
     }

@@ -33,6 +33,9 @@ Route::get('image/view/{fileImage}', 'Admin\ProductController@viewImage')->name(
 Route::get('/products', 'ProductController@index')->name('products.index');
 Route::get('/products/{id}', 'ProductController@show')->name('products.show');
 Route::get('/products/image/{imageName}', 'ProductController@image')->name('products.image');
+// product view
+Route::post('/products/review/store/{product_id}', 'ProductController@storeReview')->name('products.review');
+Route::get('/products/review/{product_id}', 'ProductController@getReview')->name('products.index.review');
 
 Route::get('/carts', 'CartController@index')->name('carts.index');
 Route::get('/carts/add/{id}', 'CartController@add')->name('carts.add');

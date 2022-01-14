@@ -35,8 +35,13 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $this->validate(request(), [
-            'shipping_address' => 'required',
-            'zip_code' => 'required'
+            'address' => 'required',
+            'address_line2' => 'required',
+            'district' => 'required',
+            'city' => 'required',
+            'province' => 'required',
+            'zip_code' => 'required',
+            'phone_number' => 'required'
         ]);
 
         $cart = session()->get('cart');
@@ -48,8 +53,13 @@ class OrderController extends Controller
         $order = new Order();
         $order->user_id = Auth::user()->id;
         $order->status = 'PENDING';
-        $order->shipping_address = $request->post('shipping_address');
+        $order->address = $request->post('address');
+        $order->address_line2 = $request->post('address_line2');
+        $order->district = $request->post('district');
+        $order->city = $request->post('city');
+        $order->province = $request->post('province');
         $order->zip_code = $request->post('zip_code');
+        $order->phone_number = $request->post('phone_number');
         $order->total_price = $total_price;
         $order->save();
 
